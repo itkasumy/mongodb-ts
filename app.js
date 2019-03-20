@@ -12,21 +12,21 @@ mongoose.connection.on('connected', () => {
 })
 
 const User = mongoose.model('user', mongoose.Schema({
-  name: {type: String, require: true},
+  user: {type: String, require: true},
   age: {type: Number, require: true}
 }))
 
-// User.create({name: 'ly', age: 18}, (err, doc) => {
+// User.create({user: 'ly', age: 18}, (err, doc) => {
 //   err ? console.log(err) : console.log(doc)
 // })
 
-User.remove({age: undefined}, (err, doc) => {
-  err ? console.log(err) : console.log(doc)
-})
+// User.remove({user: 'xml'}, (err, doc) => {
+//   err ? console.log(err) : console.log(doc)
+// })
 
-User.update({user: 'ksm'}, {'$set': {age: 24}}, (err, doc) => {
-  err ? console.log(err) : console.log(doc)
-})
+// User.update({user: 'ksm'}, {'$set': {age: 24}}, (err, doc) => {
+//   err ? console.log(err) : console.log(doc)
+// })
 
 app.get('/', (req, res) => {
   res.send('<h1>Hello Express!</h1>')
